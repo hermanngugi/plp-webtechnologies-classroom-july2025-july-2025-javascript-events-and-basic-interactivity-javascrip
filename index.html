@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Portfolio — JavaScript Assignment</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="light">
+  <!-- =================== Header / Portfolio Navigation =================== -->
+  <header class="site-header container">
+    <div class="brand">
+      <span class="logo">HJ</span>
+      <div class="brand-text">
+        <h1>Herman Ngugi</h1>
+        <p class="subtitle">Full Stack Developer • Interactive Web Experiences</p>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
+      <a href="#playground">Playground</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggle" class="btn btn-ghost" aria-label="Toggle theme" title="Toggle light/dark (Alt+T)">
+        🌙
+      </button>
+    </nav>
+  </header>
+
+  <!-- =================== Hero =================== -->
+  <section class="hero container">
+    <div class="hero-text">
+      <h2>Interactive Portfolio</h2>
+      <p>Welcome! This portfolio-style template also fulfills the <strong>Interactive Web Pages with JavaScript</strong> assignment. Explore event handling, interactive UI components, and robust form validation — all without page reloads.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="#playground">Try the Interactions</a>
+        <a class="btn btn-ghost" href="#contact">Jump to the Form</a>
+      </div>
+    </div>
+    <div class="hero-card" role="img" aria-label="Decorative grid with animated dots">
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <!-- =================== About =================== -->
+  <section id="about" class="section container">
+    <h3 class="section-title">About</h3>
+    <p>This page demonstrates:</p>
+    <ul class="checklist">
+      <li>Event listeners for clicks, mouseover, keyboard input, and input changes.</li>
+      <li>Interactive elements: theme toggle, counter game, FAQ accordion, dropdown menu, tabs, slider demo, and a modal.</li>
+      <li>Custom form validation with helpful inline feedback and prevented submission on errors.</li>
+      <li>Clear, modular, and well-commented JavaScript.</li>
+    </ul>
+  </section>
+
+  <!-- =================== Projects (portfolio flavor) =================== -->
+  <section id="work" class="section container">
+    <h3 class="section-title">Projects</h3>
+    <div class="grid three">
+      <article class="card">
+        <h4>Responsive Landing Page</h4>
+        <p>Pixel-perfect layout with semantic HTML and CSS Grid + Flexbox.</p>
+        <button class="btn btn-small open-modal" data-modal-target="#modalProject">Case Study</button>
+      </article>
+      <article class="card">
+        <h4>Data Viz Dashboard</h4>
+        <p>Charts and filters with vanilla JS and the Fetch API.</p>
+        <button class="btn btn-small open-modal" data-modal-target="#modalProject">Case Study</button>
+      </article>
+      <article class="card">
+        <h4>UI Component Kit</h4>
+        <p>Accessible components: accordions, tabs, dropdowns, and toasts.</p>
+        <button class="btn btn-small open-modal" data-modal-target="#modalProject">Case Study</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- =================== Playground / Part 1 & 2 =================== -->
+  <section id="playground" class="section container">
+    <h3 class="section-title">Playground (Events + Interactivity)</h3>
+
+    <!-- Light/Dark mode toggle -->
+    <div class="feature">
+      <h4>Theme Toggle</h4>
+      <p>Click the moon/sun button in the header to switch themes. Also try <kbd>Alt</kbd> + <kbd>T</kbd>.</p>
+    </div>
+
+    <!-- Counter / Button Game -->
+    <div class="feature">
+      <h4>Counter Game</h4>
+      <div class="counter">
+        <button id="decrement" class="btn btn-ghost" aria-label="Decrement">−</button>
+        <output id="count" aria-live="polite">0</output>
+        <button id="increment" class="btn" aria-label="Increment">+</button>
+        <button id="reset" class="btn btn-small btn-ghost" aria-label="Reset counter">Reset</button>
+      </div>
+      <p class="hint">Goal: get to exactly 7. Keyboard supported: <kbd>ArrowUp</kbd>/<kbd>ArrowDown</kbd>.</p>
+      <p id="counterMsg" class="msg" role="status" aria-live="polite"></p>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <div class="feature">
+      <h4>Simple Dropdown Menu</h4>
+      <div class="dropdown">
+        <button id="dropdownBtn" class="btn" aria-haspopup="true" aria-expanded="false">Open Menu ▾</button>
+        <ul id="dropdownMenu" class="menu" role="menu" aria-hidden="true">
+          <li role="menuitem"><button class="menu-item">Profile</button></li>
+          <li role="menuitem"><button class="menu-item">Settings</button></li>
+          <li role="menuitem"><button class="menu-item">Log out</button></li>
+        </ul>
+      </div>
+      <p class="hint">Click the button to toggle the menu. Click outside to close.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="feature">
+      <h4>Tabbed Interface</h4>
+      <div class="tabs" role="tablist" aria-label="Sample Tabs">
+        <button class="tab active" role="tab" aria-selected="true" aria-controls="tab-1" id="tabBtn1">Overview</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="tab-2" id="tabBtn2">Details</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="tab-3" id="tabBtn3">Specs</button>
+      </div>
+      <div class="tabpanels">
+        <div class="tabpanel active" role="tabpanel" id="tab-1">This is the <strong>Overview</strong> content.</div>
+        <div class="tabpanel" role="tabpanel" id="tab-2">Here are some <strong>Details</strong> with more text.</div>
+        <div class="tabpanel" role="tabpanel" id="tab-3">And these are the <strong>Specs</strong> you might want.</div>
+      </div>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="feature">
+      <h4>FAQ Accordion</h4>
+      <div class="accordion">
+        <button class="accordion-header">What is this page about?</button>
+        <div class="accordion-panel">
+          <p>It’s a portfolio-style template that also satisfies the JavaScript interactivity assignment requirements.</p>
+        </div>
+
+        <button class="accordion-header">What technologies are used?</button>
+        <div class="accordion-panel">
+          <p>Plain HTML, CSS, and JavaScript (no frameworks required).</p>
+        </div>
+
+        <button class="accordion-header">Can I reuse this template?</button>
+        <div class="accordion-panel">
+          <p>Yes! Customize the content, colors, and components as you like.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider demo + mouseover -->
+    <div class="feature">
+      <h4>Slider + Mouseover</h4>
+      <label for="volume">Volume: <output id="volOut">50</output></label>
+      <input id="volume" type="range" min="0" max="100" value="50" />
+      <div id="hoverBox" class="hoverbox" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">Hover over me!</div>
+      <p class="hint">Slider uses the <code>input</code> event; hover uses <code>onmouseover</code>/<code>onmouseout</code>.</p>
+    </div>
+
+    <!-- Modal demo -->
+    <div class="feature">
+      <h4>Modal</h4>
+      <button class="btn" id="openDemoModal">Open Demo Modal</button>
+      <dialog id="demoModal">
+        <h5>Modal Title</h5>
+        <p>This modal can be closed via a button, Escape key, clicking outside, or programmatically.</p>
+        <div class="modal-actions">
+          <button class="btn btn-ghost" id="closeDemoModal">Close</button>
+        </div>
+      </dialog>
+    </div>
+  </section>
+
+  <!-- =================== Contact / Part 3 (Form Validation) =================== -->
+  <section id="contact" class="section container">
+    <h3 class="section-title">Contact</h3>
+    <p>Custom validation prevents submission until all fields pass.</p>
+
+    <form id="contactForm" novalidate>
+      <div class="form-row">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Jane Doe" />
+        <small class="error" id="nameError"></small>
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="jane@example.com" />
+        <small class="error" id="emailError"></small>
+      </div>
+
+      <div class="form-row">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="At least 8 chars, 1 number" />
+        <small class="error" id="passwordError"></small>
+      </div>
+
+      <div class="form-row">
+        <label for="confirm">Confirm Password</label>
+        <input type="password" id="confirm" name="confirm" placeholder="Re-type your password" />
+        <small class="error" id="confirmError"></small>
+      </div>
+
+      <div class="form-row">
+        <label><input type="checkbox" id="tos" /> I agree to the Terms of Service</label>
+        <small class="error" id="tosError"></small>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Send Message</button>
+        <button type="reset" class="btn btn-ghost">Reset</button>
+      </div>
+
+      <p id="formSuccess" class="success" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- =================== Footer =================== -->
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> Herman Juma — Built with vanilla HTML, CSS, and JS.</p>
+  </footer>
+
+  <!-- Modal used by "Projects" cards -->
+  <dialog id="modalProject">
+    <h5>Case Study (Placeholder)</h5>
+    <p>This is a shared modal triggered by the cards above. In plain JS, we show/hide the dialog using <code>showModal()</code> and <code>close()</code>, or by toggling CSS <code>display</code> for a custom modal.</p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost close-modal">Close</button>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
