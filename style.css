@@ -1,0 +1,115 @@
+/* =================== Base / Theme =================== */
+:root {
+  --bg: #0b0c10;
+  --card: #121419;
+  --text: #e6e6e6;
+  --muted: #a0a3a7;
+  --brand: #6ee7b7;
+  --brand-2: #60a5fa;
+  --ring: rgba(110, 231, 183, 0.35);
+  --error: #ff6b6b;
+  --success: #22c55e;
+}
+
+body.light {
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --brand: #0ea5e9;
+  --brand-2: #8b5cf6;
+  --ring: rgba(14, 165, 233, 0.25);
+}
+
+/* Reset-ish */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif; }
+body { background: var(--bg); color: var(--text); line-height: 1.6; }
+
+.container { width: min(1100px, 92vw); margin: 0 auto; }
+
+/* =================== Header =================== */
+.site-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+.brand { display: flex; gap: 12px; align-items: center; }
+.logo { width: 44px; height: 44px; display: grid; place-items: center; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #0b0c10; font-weight: 800; border-radius: 12px; }
+.brand-text h1 { margin: 0; font-size: 20px; }
+.subtitle { margin: 0; color: var(--muted); font-size: 12px; }
+.nav { display: flex; gap: 14px; align-items: center; }
+.nav a { color: var(--text); text-decoration: none; padding: 8px 10px; border-radius: 10px; }
+.nav a:hover { background: var(--card); }
+
+/* =================== Hero =================== */
+.hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; padding: 32px 0 8px; }
+.hero-text h2 { font-size: 40px; margin-top: 0; margin-bottom: 10px; }
+.hero-card { background: var(--card); border-radius: 18px; padding: 20px; min-height: 220px; position: relative; overflow: hidden; }
+.dots { position: absolute; inset: 0; background: radial-gradient(var(--brand) 1px, transparent 1px); background-size: 18px 18px; opacity: .35; animation: float 10s linear infinite; }
+@keyframes float { from { transform: translateY(0); } to { transform: translateY(-18px); } }
+
+.hero-ctas { display: flex; gap: 10px; margin-top: 18px; }
+
+/* =================== Sections and Cards =================== */
+.section { padding: 42px 0; }
+.section-title { margin-top: 0; font-size: 26px; }
+.grid.three { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
+.card { background: var(--card); padding: 18px; border-radius: 16px; box-shadow: 0 6px 30px rgba(0,0,0,0.15); }
+.card h4 { margin-top: 0; }
+
+/* =================== Buttons =================== */
+.btn { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #061018; padding: 10px 14px; border: none; border-radius: 12px; cursor: pointer; font-weight: 700; }
+.btn:hover { filter: brightness(1.05); }
+.btn:focus { outline: 3px solid var(--ring); outline-offset: 2px; }
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.12); }
+.btn-small { padding: 6px 10px; font-size: 12px; }
+
+/* =================== Playground =================== */
+.feature { background: var(--card); padding: 18px; border-radius: 16px; margin-bottom: 16px; }
+.counter { display: inline-flex; gap: 8px; align-items: center; background: rgba(255,255,255,0.04); padding: 8px 10px; border-radius: 12px; }
+.counter output { min-width: 36px; text-align: center; font-size: 20px; font-weight: 800; }
+.hint { color: var(--muted); font-size: 13px; margin: 8px 0 0; }
+.msg { margin-top: 6px; font-weight: 600; }
+.dropdown { position: relative; display: inline-block; }
+.menu { position: absolute; top: 42px; left: 0; list-style: none; margin: 0; padding: 8px; background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; width: 160px; display: none; }
+.menu.show { display: block; }
+.menu-item { width: 100%; text-align: left; background: transparent; border: none; padding: 8px 10px; color: var(--text); border-radius: 10px; cursor: pointer; }
+.menu-item:hover { background: rgba(255,255,255,0.06); }
+
+.tabs { display: inline-flex; gap: 8px; margin-bottom: 8px; }
+.tab { background: transparent; border: 1px solid rgba(255,255,255,0.12); padding: 8px 12px; border-radius: 10px; cursor: pointer; }
+.tab.active { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #061018; border-color: transparent; }
+.tabpanels { background: rgba(255,255,255,0.04); padding: 12px; border-radius: 12px; }
+.tabpanel { display: none; }
+.tabpanel.active { display: block; }
+
+.accordion .accordion-header { width: 100%; text-align: left; background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.12); padding: 10px 12px; border-radius: 12px; cursor: pointer; margin-bottom: 8px; }
+.accordion .accordion-panel { display: none; padding: 0 6px 8px; color: var(--muted); }
+.accordion .accordion-panel.show { display: block; }
+
+.hoverbox { margin-top: 10px; padding: 16px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.15); display: inline-block; }
+.hoverbox.hovered { background: rgba(110, 231, 183, 0.12); border-color: var(--brand); }
+
+dialog { background: var(--card); color: var(--text); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 18px; }
+dialog::backdrop { background: rgba(0,0,0,0.45); }
+
+/* =================== Form =================== */
+form { background: var(--card); padding: 18px; border-radius: 16px; }
+.form-row { display: grid; gap: 6px; margin-bottom: 12px; }
+input[type="text"], input[type="email"], input[type="password"] {
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+input:focus { outline: 3px solid var(--ring); border-color: transparent; }
+.error { color: var(--error); min-height: 16px; }
+.success { color: var(--success); font-weight: 700; }
+.form-actions { display: flex; gap: 8px; }
+
+/* =================== Footer =================== */
+.site-footer { padding: 30px 0; color: var(--muted); font-size: 14px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 30px; }
+
+/* =================== Responsive =================== */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .grid.three { grid-template-columns: 1fr; }
+}
